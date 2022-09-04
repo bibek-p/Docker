@@ -1,0 +1,28 @@
+docker pull "Image_Name":"Verion"   =>  This Is For Docker Pull Image
+Docker start "Image"  ==> Start The Docker
+Docker Stop "image" ==> Stop Docker
+Docker run -it image ===> Run Intractive Enviroment
+Docker container exec -it image bash ===> Enter Into The Enviroment
+docker inspect image ==> Details About image
+Docker ps ====> Running process
+Docker ps -a ====> List Of Stoped process
+Docker images  ===> Images In Local
+docker rm image ==> Remove Contailer
+docker rmi image ====> Remove image from Local
+docker ps (list all containers)
+docker run ImageName(checks locally for image,if not available it will go registry,and then go DOCKER_HOST)
+docker start ContainerName/ID
+docker kill ContainerName/ID (Stops a running container) 
+docker rm ContainerName/ID (Deletes a stopped container)
+docker rm $(docker ps -a -q) (Delete all stopped containers)
+docker commit -m "Message to commit" image_id 
+
+Creating Docker Image:
+=============================
+1. Create A docker file having This
+    FROM ubuntu
+    MAINTAINER Bibekananda bhuyan <Bibekananda@gmail.com>
+    RUN apt-get update
+    CMD [“echo”, “Hello World”]
+
+2. docker build -t imagename <docker_file_path>
